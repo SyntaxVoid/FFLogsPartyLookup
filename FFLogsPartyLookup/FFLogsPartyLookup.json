@@ -1,0 +1,28 @@
+[
+  {
+    "Author": "Myoni",
+    "Name": "FFLogs Party Lookup",
+    "Description": "Use /pfflogs to show links to your party members' FFLogs page",
+    "InternalName": "FFLogsPartyLookup",
+    "AssemblyVersion": "1.2.3.0",
+    "RepoUrl": "https://github.com/SyntaxVoid/FFLogsPartyLookup",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 5,
+    "Tags": [
+      "Myoni",
+      "FFLogs",
+      "logs",
+      "trap",
+      "shark"
+    ],
+    "IconUrl": "https://github.com/SyntaxVoid/FFLogsPartyLookup/main/tempIcon.png",
+    "IsHide": "False",
+    "IsTestingExclusive": "False",
+    "LastUpdated": 1645615370,
+    "DownloadCount": 6969,
+    "DownloadLinkInstall": "TBD",
+    "DownloadLinkTesting": "TBD",
+    "DownloadLinkUpdate" : "TBD"
+
+  }
+]
