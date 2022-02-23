@@ -6,7 +6,7 @@
 ## _Instantly retrieve links to your party members' FFLogs pages in chat_
 
 <p align="left">
-  <img src="https://i.imgur.com/vGvpWfG.png" alt="Dalamud" width="900"/>
+  <img src="https://i.imgur.com/vGvpWfG.png" alt="Sample" width="900"/>
 </p>
 
 
@@ -18,10 +18,12 @@ Download the FFXIV Quick launcher here: https://github.com/goatcorp/FFXIVQuickLa
 - Ensure that "Enable in-game features" is on in the launcher settings
 - Type **`/xlsettings`** in chat to open Dalamud's settings
 - Click "Experimental"
-- Copy and Paste the following URL into one of the blank inputs under the "Custom Plugin Repositories" section: TBD
+- Copy and Paste the following URL into one of the blank inputs under the "Custom Plugin Repositories" section: https://raw.githubusercontent.com/SyntaxVoid/FFLogsPartyLookup/main/FFLogsPartyLookup/FFLogsPartyLookup.json
 - **Click the + button**
 - Check the "Enabled" box for the new entry
-- Placeholder for image of custom repo box
+<p align="left">
+  <img src="https://i.imgur.com/w6cc3VH.png" alt="Custom Repo" width="600"/>
+</p>
+
 - Click "Save and Close" at the bottom
 - Now that you've added this plugins repository, type **`/xlplugins`** in chat and search for my plugin: **FFLogs Party Lookup**
-- Placeholder for image of FFLogs Party Lookup

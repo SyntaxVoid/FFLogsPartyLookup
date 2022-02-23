@@ -1,0 +1,5 @@
+'cause I know I'll forget.
+
+1. Update the FFLogsPartyLookup.json file to include relevant links
+2. Make a new folder in Releases with the appropriate name
+3. Add the new .dll file and the .json file
