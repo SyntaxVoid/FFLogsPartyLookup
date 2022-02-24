@@ -11,7 +11,13 @@
 
 
 **FFLogs Party Lookup is a plugin built using the Dalamud API and requires the Dalamud quicklauncher to run.** 
-Download the FFXIV Quick launcher here: https://github.com/goatcorp/FFXIVQuickLauncher
+Download the __[FFXIV Quick Launcher](https://github.com/goatcorp/FFXIVQuickLauncher)__ if you haven't already.
+
+Also check out the __[Simple Tweaks](https://github.com/Caraxi/SimpleTweaksPlugin)__ plugin as they have a feature that allows links in chat to be click-able!
+<p align="left">
+  <img src="https://i.imgur.com/M0S7zxn.png" alt="Simple Tweaks" width="600"/>
+</p>
+
 
 ## Plugin Download
 **Suggested Method**:
@@ -27,3 +33,9 @@ Download the FFXIV Quick launcher here: https://github.com/goatcorp/FFXIVQuickLa
 
 - Click "Save and Close" at the bottom
 - Now that you've added this plugins repository, type **`/xlplugins`** in chat and search for my plugin: **FFLogs Party Lookup**
+
+<p align="left">
+  <img src="https://i.imgur.com/bJMcjSm.png" alt="Plugin Lookup" width="600"/>
+</p>
+
+
