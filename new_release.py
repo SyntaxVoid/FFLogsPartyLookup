@@ -30,6 +30,7 @@ def update_download_links(version_tag):
   new_parsed["DownloadLinkInstall"] = new_link
   new_parsed["DownloadLinkTesting"] = new_link
   new_parsed["DownloadLinkUpdate"]  = new_link
+  new_parsed["LastUpdated"] = int(time.time())
   if was_list:
     new_data = json.dumps([new_parsed])
   else:
