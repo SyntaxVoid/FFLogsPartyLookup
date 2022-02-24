@@ -32,9 +32,9 @@ def update_download_links(version_tag):
   new_parsed["DownloadLinkUpdate"]  = new_link
   new_parsed["LastUpdated"] = int(time.time())
   if was_list:
-    new_data = json.dumps([new_parsed])
+    new_data = json.dumps([new_parsed], indent=2)
   else:
-    new_data = json.dumps(new_parsed)
+    new_data = json.dumps(new_parsed, indent=2)
   with open(temp_path, "w") as new:
     new.write(new_data)
   os.unlink(json_path)
