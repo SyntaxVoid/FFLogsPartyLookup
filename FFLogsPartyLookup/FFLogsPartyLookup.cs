@@ -9,6 +9,7 @@ using Dalamud.Game.ClientState;
 using Dalamud.Game.ClientState.Party;
 using Dalamud.Game.Gui;
 using Dalamud.Game.Text;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 
 
 namespace FFLogsPartyLookup
@@ -78,7 +79,10 @@ namespace FFLogsPartyLookup
         // "{Name} ({Job}): {Url}";
         tempName = pInfo[i].playerName;
         tempUrl = PartyHandler.urlFromPlayerInfo(pInfo[i]);
-        if (i == 0) // it u!
+        
+        PlayerCharacter you = Subsystems.ClientState.LocalPlayer;
+        string yourName = you.Name.ToString();
+        if (tempName.Equals(yourName)) // it u!
         {
           echo(String.Format(templateMessage, "You", tempUrl));
         }

@@ -4,9 +4,11 @@ using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using Dalamud.Logging;
 using Dalamud.Game.ClientState.Party;
+using Dalamud.Game.ClientState.Objects.SubKinds;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets;
 using FFXIVClientStructs.FFXIV.Client.UI;
+
 
 namespace FFLogsPartyLookup
 {
@@ -230,18 +232,30 @@ namespace FFLogsPartyLookup
       }
     }
 
+    private static List<playerInfo> _getInfoFromSoloParty()
+    {
+      List<playerInfo> output = new List<playerInfo>();
+      PlayerCharacter you = Subsystems.ClientState.LocalPlayer;
+      string yourName = you.Name.ToString();
+      string yourWorld = worldNameFromByte((byte)you.HomeWorld.Id);
+      string yourRegion = regionFromWorld(yourWorld);
+      playerInfo yourInfo = new playerInfo(yourName, yourWorld, yourRegion);
+      output.Add(yourInfo);
+      return output;
+    }
+
     private static List<playerInfo> _getInfoFromNormalParty()
     {
       // Generates a list of playerInfo objects from the game's memory
-      // assuming the party is a normal party (solo/light/full/etc.)
+      // assuming the party is a normal party (light/full/etc.)
       string tempName;
       string tempWorld;
       string tempRegion;
       List<playerInfo> output = new List<playerInfo>();
       int pCount = Subsystems.PartyList.Length;
 
-      int i=0;
-      do // Need the do-while loop for solo parties cause pCount=0 there
+      //int i=0;
+      for (int i=0; i<pCount; i++)
       {
         IntPtr memberPtr = Subsystems.PartyList.GetPartyMemberAddress(i);
         PartyMember member = Subsystems.PartyList.CreatePartyMemberReference(memberPtr);
@@ -249,8 +263,7 @@ namespace FFLogsPartyLookup
         tempWorld = worldNameFromByte((byte)member.World.Id);
         tempRegion = regionFromWorld(tempWorld);
         output.Add(new playerInfo(tempName, tempWorld, tempRegion));
-        i++;
-      } while (i<pCount);
+      }
       return output;
     }
 
@@ -277,8 +290,8 @@ namespace FFLogsPartyLookup
       int pType = getPartyType();
       switch (pType)
       {
-        case 0: // Solo Party (Handled the same way as a normal party)
-        return _getInfoFromNormalParty();
+        case 0: // Solo Party
+        return _getInfoFromSoloParty();
 
         case 1: // Normal non-cross world party
         return _getInfoFromNormalParty();

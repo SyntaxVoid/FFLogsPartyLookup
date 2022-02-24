@@ -1,5 +1,27 @@
-'cause I know I'll forget.
+'cause I know I'll forget #uwu
 
-1. Update the FFLogsPartyLookup.json file to include relevant links
-2. Make a new folder in Releases with the appropriate name
-3. Add the new .dll file and the .json file
+Easy way: 
+  python new_release.py
+
+Hard Way:
+1. Pick new version tag (like v1.0.0.1)
+2. Update the FFLogsPartyLookup.json file to contain links to the new release
+     - The link won't be valid yet but it will be after you upload the release
+3. Run dotnet build /p:Version=1.0.0.1
+     - but replace 1.0.0.1 with your version #
+4. Go into the Releases folder and create a new folder with the version # name
+5. Go into the bin/Debug folder and copy the FFLogsPartyLookup.dll and .json
+   files into the Release folder you just created.
+     - Double check the download links in the .json are correct (they still
+       won't be valid, but make sure they reference the new release you are
+       creating)
+6. From the release folder, select the new .dll and .json file and right click
+   -> send to zipped folder.
+7. Push any changes to github now.
+8. Create a new release on github with the title "v1.0.0.1" but with your own
+   version number and upload the zipped folder you just created. Make sure the
+   zipped folder is named "v.1.0.0.1" except with your own version #... ofc...
+9. Make sure Dalamud recognizes there is an update to your plugin and that the
+   new version is able to load, execute, and unload successfully.
+
+Tada~
