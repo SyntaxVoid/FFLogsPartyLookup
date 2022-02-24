@@ -43,7 +43,7 @@ def update_download_links(version_tag):
 
 def make_new_build(version_tag):
   version_number = version_tag[1:] # Strip the v off
-  os.system(f"dotnet build /p:Version={version_number}")
+  os.system(f"dotnet build /p:Version={version_number} /p:AssemblyVersion={version_number} /p:FileVersion={version_number}")
   return
 
 def make_and_fill_new_release_folder(version_tag):
