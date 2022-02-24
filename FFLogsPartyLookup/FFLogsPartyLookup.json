@@ -4,7 +4,7 @@
     "Name": "FFLogs Party Lookup",
     "Description": "Use /pfflogs to show links to your party members' FFLogs page",
     "InternalName": "FFLogsPartyLookup",
-    "AssemblyVersion": "1.0.0.7",
+    "AssemblyVersion": "1.0.0.8",
     "RepoUrl": "https://github.com/SyntaxVoid/FFLogsPartyLookup",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 5,
@@ -20,10 +20,10 @@
     "IconUrl": "https://raw.githubusercontent.com/SyntaxVoid/FFLogsPartyLookup/main/tempIcon.png",
     "IsHide": "False",
     "IsTestingExclusive": "False",
-    "LastUpdated": 1645666260,
+    "LastUpdated": 1645699431,
     "DownloadCount": 6969,
-    "DownloadLinkInstall": "https://github.com/SyntaxVoid/FFLogsPartyLookup/releases/download/v1.0.0.7/v1.0.0.7.zip",
-    "DownloadLinkTesting": "https://github.com/SyntaxVoid/FFLogsPartyLookup/releases/download/v1.0.0.7/v1.0.0.7.zip",
-    "DownloadLinkUpdate": "https://github.com/SyntaxVoid/FFLogsPartyLookup/releases/download/v1.0.0.7/v1.0.0.7.zip"
+    "DownloadLinkInstall": "https://github.com/SyntaxVoid/FFLogsPartyLookup/releases/download/v1.0.0.8/v1.0.0.8.zip",
+    "DownloadLinkTesting": "https://github.com/SyntaxVoid/FFLogsPartyLookup/releases/download/v1.0.0.8/v1.0.0.8.zip",
+    "DownloadLinkUpdate": "https://github.com/SyntaxVoid/FFLogsPartyLookup/releases/download/v1.0.0.8/v1.0.0.8.zip"
   }
 ]

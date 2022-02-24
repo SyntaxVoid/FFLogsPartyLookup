@@ -70,7 +70,7 @@ namespace FFLogsPartyLookup
       List<playerInfo> pInfo = PartyHandler.getInfoFromParty();
       if (pInfo == null)
       {
-        echo("Unexpected party type. Maybe a Trust?");
+        echo("Unexpected party type. Maybe a Trust or Ally party? (not implented yet)");
         return;
       }
       int pCount = pInfo.Count;

@@ -219,16 +219,26 @@ namespace FFLogsPartyLookup
       //     0: Player is in a solo party
       //     1: Player is in a normal party (non-cross world)
       //     2: Player is in a cross-world party
+      //     3: Player is in an alliance group
       //    -1: Player is in none of the above. Trust party maybe?
       var pList = (AddonPartyList*)Subsystems.GameGui.GetAddonByName("_PartyList", 1);
       var pTypeNode = pList->PartyTypeTextNode;
       string pType = pTypeNode->NodeText.ToString();
       switch (pType)
       {
-          case "Solo": return 0;
-          case "Party": case "Light Party": case "Full Party": return 1;
-          case "Cross-world Party": return 2;
-          default: return -1;
+          case "Solo": 
+            return 0;
+          case "Party": case "Light Party": case "Full Party": 
+            return 1;
+          case "Cross-world Party": 
+            return 2;
+          case "Alliance A": case "Alliance B": case "Alliance C":
+          case "Alliance D": case "Alliance E": case "Alliance F":
+          case "Alliance G": case "Alliance H": case "Alliance I":
+            return 3;
+          default: 
+            PluginLog.Debug($"FFLogsPartyLookup: Warning (Unexpected party type): {pType}");
+            return -1;
       }
     }
 
@@ -280,6 +290,29 @@ namespace FFLogsPartyLookup
       return output;
     }
 
+    private static List<playerInfo> _getInfoFromAllianceParty()
+    {
+      // Generates a list of playerInfo objects from the game's memory
+      // assuming the party is an alliance party. Alliance parties are a 
+      // bit funky though... If you're in the overworld, they work like a
+      // cross world party and if you're in a duty they work like a normal
+      // party. We can check the PartyList.Length attribute to figure out
+      // which is which. If we're in a crossworld alliance party (overworld),
+      // then PartyList.Length will be 0, otherwise it will be some non-
+      // negative number. We are also assuming the party is either Alliance A,
+      // Alliance B, ... etc. already.
+      Subsystems.ChatGui.Print(Subsystems.PartyList.Length.ToString());
+      if (Subsystems.PartyList.Length == 0) // Then we're in the overworld
+      {
+        return _getInfoFromCrossWorldParty();
+      }
+      else // Then we're in a duty
+      {
+        return _getInfoFromNormalParty();
+      }
+    }
+
+
     public static List<playerInfo> getInfoFromParty()
     {
       // This is the outward facing method you can interact with if you don't
@@ -298,6 +331,9 @@ namespace FFLogsPartyLookup
 
         case 2: // Cross World party
         return _getInfoFromCrossWorldParty();
+
+        case 3: // Alliance Party
+        return _getInfoFromAllianceParty();
 
         default: // Fail
         return null;
