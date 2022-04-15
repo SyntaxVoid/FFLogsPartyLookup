@@ -7,7 +7,7 @@
     "AssemblyVersion": "1.0.0.8",
     "RepoUrl": "https://github.com/SyntaxVoid/FFLogsPartyLookup",
     "ApplicableVersion": "any",
-    "DalamudApiLevel": 5,
+    "DalamudApiLevel": 6,
     "Tags": [
       "Myoni",
       "FFLogs",
